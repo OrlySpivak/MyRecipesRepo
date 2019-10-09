@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -197,13 +198,33 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IngredientsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RecipesController.cs" />
+    <Compile Include="Controllers\StatsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910090704235_InitialCreate.cs" />
+    <Compile Include="Migrations\201910090704235_InitialCreate.Designer.cs">
+      <DependentUpon>201910090704235_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910090812322_AddIngridient.cs" />
+    <Compile Include="Migrations\201910090812322_AddIngridient.Designer.cs">
+      <DependentUpon>201910090812322_AddIngridient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910090902324_AddRecepie.cs" />
+    <Compile Include="Migrations\201910090902324_AddRecepie.Designer.cs">
+      <DependentUpon>201910090902324_AddRecepie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\FoodType.cs" />
+    <Compile Include="Controllers\FoodTypesController.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Ingredient.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Recipe.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -267,6 +288,22 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Stats\Graph.cshtml" />
+    <Content Include="Views\FoodTypes\Create.cshtml" />
+    <Content Include="Views\FoodTypes\Delete.cshtml" />
+    <Content Include="Views\FoodTypes\Details.cshtml" />
+    <Content Include="Views\FoodTypes\Edit.cshtml" />
+    <Content Include="Views\FoodTypes\Index.cshtml" />
+    <Content Include="Views\Ingredients\Create.cshtml" />
+    <Content Include="Views\Ingredients\Delete.cshtml" />
+    <Content Include="Views\Ingredients\Details.cshtml" />
+    <Content Include="Views\Ingredients\Edit.cshtml" />
+    <Content Include="Views\Ingredients\Index.cshtml" />
+    <Content Include="Views\Recipes\Create.cshtml" />
+    <Content Include="Views\Recipes\Delete.cshtml" />
+    <Content Include="Views\Recipes\Details.cshtml" />
+    <Content Include="Views\Recipes\Edit.cshtml" />
+    <Content Include="Views\Recipes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -278,6 +315,17 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201910090704235_InitialCreate.resx">
+      <DependentUpon>201910090704235_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910090812322_AddIngridient.resx">
+      <DependentUpon>201910090812322_AddIngridient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910090902324_AddRecepie.resx">
+      <DependentUpon>201910090902324_AddRecepie.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
