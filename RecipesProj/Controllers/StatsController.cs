@@ -19,6 +19,7 @@ namespace RecipesProj.Models
             return View();
         }
 
+        [Authorize(Roles = "Admin")]
         public ActionResult Graph()
         {
             var result = (from r in db.Recipes select r).GroupBy(recipe => recipe.FoodType).Select(n => new
