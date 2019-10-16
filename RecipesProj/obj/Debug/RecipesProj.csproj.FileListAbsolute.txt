@@ -248,3 +248,5 @@ C:\Users\USER\Documents\college\semester 3\web_applications\projectClone\MyRecip
 C:\Users\USER\Documents\college\semester 3\web_applications\projectClone\MyRecipesRepo\RecipesProj\obj\Debug\RecipesProj.pdb
 C:\Users\USER\Documents\college\semester 3\web_applications\projectClone\MyRecipesRepo\RecipesProj\obj\Debug\RecipesProj.Migrations.Recipe.resources
 C:\Users\USER\Documents\college\semester 3\web_applications\projectClone\MyRecipesRepo\RecipesProj\obj\Debug\RecipesProj.csproj.GenerateResource.Cache
+C:\Users\Orly\Source\Repos\MyRecipesRepo\RecipesProj\obj\Debug\RecipesProj.Migrations.Recipe.resources
+C:\Users\Orly\Source\Repos\MyRecipesRepo\RecipesProj\obj\Debug\RecipesProj.csproj.GenerateResource.cache
