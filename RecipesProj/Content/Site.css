@@ -28,3 +28,10 @@ textarea {
     font-size: small;
     color: gray;
 }
+
+#myMap {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    border: 1px black solid
+}

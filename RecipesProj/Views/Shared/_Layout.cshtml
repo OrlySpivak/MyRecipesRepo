@@ -42,13 +42,14 @@
         @RenderBody()
         <hr />
         <footer>
-            <p id="footer-text">If you want to hear more, just @Html.ActionLink("talk", "Contact", "Home", null, new { @style="text-shadow:none;" }) with us</p>
+            <p id="footer-text">If you want to hear more, just @Html.ActionLink("talk", "Contact", "Home", null, new { @style = "text-shadow:none;" }) with us</p>
         </footer>
     </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     <script type="text/javascript" src="@Url.Content("/Scripts/Site.js")"></script>
+    <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=AgkOTAGI9F92_TQTr6AuOXESdBwPAzYDOIOr7h7ZchLqTqVsagAUBOQfZ2r1mrIV' async defer></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>
