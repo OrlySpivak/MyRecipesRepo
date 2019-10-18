@@ -9,7 +9,7 @@ namespace RecipesProj.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(RecipesProj.Models.ApplicationDbContext context)

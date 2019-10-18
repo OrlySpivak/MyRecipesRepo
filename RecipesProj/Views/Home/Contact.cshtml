@@ -4,14 +4,61 @@
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 
+<script type='text/javascript'>
+    function GetMap() {
+        var map = new Microsoft.Maps.Map('#myMap');
+
+        var azrieliLoc = new Microsoft.Maps.Location(32.075069, 34.790840);
+        var comanLoc = new Microsoft.Maps.Location(31.968910, 34.770729);
+
+
+        //Create custom Pushpin
+        var azrieliPin = new Microsoft.Maps.Pushpin(azrieliLoc, {
+            title: 'MyRecipes',
+            subTitle: 'Azrieli',
+            text: '1'
+        });
+
+         var colmanPin = new Microsoft.Maps.Pushpin(comanLoc, {
+            title: 'MyRecipes',
+            subTitle: 'College Of Management',
+            text: '2'
+        });
+
+        map.entities.push([azrieliPin, colmanPin]);
+
+        $('#azrieli').click(() => {
+            map.setView({
+                center: azrieliLoc,
+                zoom: 15
+            });
+        })
+
+        $('#colman').click(() => {
+            map.setView({
+                center: comanLoc,
+                zoom: 15
+            });
+        })
+    }
+</script>
+
 <address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
+    <b>Azrieli Mall</b><br />
+    Menahem Begin 132, Tel Aviv
+    <button type="button" class="btn btn-outline-dark btn-sm" id="azrieli">Dark</button><br />
 </address>
+
+<address>
+    <b>College of Management</b> <br />
+    Eli Visel 2, Rison Letzion
+    <button type="button" class="btn btn-outline-dark btn-sm" id="colman">Dark</button> <br />
+</address>
+
+<div id="myMap"></div>
 
 <address>
     <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
     <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
 </address>
+

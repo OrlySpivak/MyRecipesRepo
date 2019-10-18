@@ -1,6 +1,6 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿@font-face {
+    font-family: Segoe UI;
+    src: url("../Content/Fonts/AnticSlab-Regular.ttf") format('truetype');
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +21,17 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+#footer-text {
+    text-shadow: 2px 2px #dcdada;
+    font-size: small;
+    color: gray;
+}
+
+#myMap {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    border: 1px black solid
 }

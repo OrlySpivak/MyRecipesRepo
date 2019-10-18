@@ -57,7 +57,7 @@ namespace RecipesProj.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.FoodTypeID = new SelectList(db.FoodTypes, "ID", "Type", recipe.FoodTypeID);
+            ViewBag.FoodTypeID = new SelectList(db.FoodTypes, "ID", "Type", recipe.FoodType_ID);
             return View(recipe);
         }
 
@@ -73,7 +73,7 @@ namespace RecipesProj.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.FoodTypeID = new SelectList(db.FoodTypes, "ID", "Type", recipe.FoodTypeID);
+            ViewBag.FoodTypeID = new SelectList(db.FoodTypes, "ID", "Type", recipe.FoodType_ID);
             return View(recipe);
         }
 
@@ -90,7 +90,7 @@ namespace RecipesProj.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.FoodTypeID = new SelectList(db.FoodTypes, "ID", "Type", recipe.FoodTypeID);
+            ViewBag.FoodTypeID = new SelectList(db.FoodTypes, "ID", "Type", recipe.FoodType_ID);
             return View(recipe);
         }
 
