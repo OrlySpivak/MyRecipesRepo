@@ -10,20 +10,21 @@ namespace RecipesProj.Controllers
     {
         public ActionResult Index()
         {
+            ViewBag.MainTitle = "MyRecipes";
+            ViewBag.SubTitle = "all your favorites, in one place";
+
             return View();
         }
 
         [Authorize(Roles = "Admin")]
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Talk to us!";
 
             return View();
         }
