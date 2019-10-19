@@ -23,7 +23,11 @@ textarea {
     max-width: 280px;
 }
 
-#footer-text {
+#sub-title {
+    color: gray;
+}
+
+.footer-text {
     text-shadow: 2px 2px #dcdada;
     font-size: small;
     color: gray;
@@ -34,4 +38,39 @@ textarea {
     width: 600px;
     height: 400px;
     border: 1px black solid
+}
+
+.loc-btn {
+    border-radius: 40%;
+    border: none;
+}
+
+.loc-ico {
+    font-size: 20px;
+}
+
+.branch-desc {
+    transition: color 1s;
+}
+
+.branch-desc:hover {
+    color: lightgray;
+    cursor: pointer;
+}
+
+#about-text {
+    column-count: 3;
+    column-rule-style: solid;
+    column-rule-width: 1px;
+    column-rule-color: lightpink;
+}
+
+#aside {
+    color: black;
+    font-size: 12px;
+    font-style: italic;
+}
+
+#canvas {
+    padding-left: 5px;
 }

@@ -1,10 +1,4 @@
-﻿@{
-    ViewBag.Title = "Contact";
-}
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
-
-<script type='text/javascript'>
+﻿<script type='text/javascript'>
     function GetMap() {
         var map = new Microsoft.Maps.Map('#myMap');
 
@@ -43,22 +37,34 @@
     }
 </script>
 
-<address>
-    <b>Azrieli Mall</b><br />
-    Menahem Begin 132, Tel Aviv
-    <button type="button" class="btn btn-outline-dark btn-sm" id="azrieli">Dark</button><br />
-</address>
+<div class="d-flex flex-column justify-content-center align-items-center">
 
-<address>
-    <b>College of Management</b> <br />
-    Eli Visel 2, Rison Letzion
-    <button type="button" class="btn btn-outline-dark btn-sm" id="colman">Dark</button> <br />
-</address>
+    <h3>@ViewBag.Message</h3>
 
-<div id="myMap"></div>
+    <address>
+        <span class="branch-desc" id="azrieli">
+            <b>Azrieli Mall</b>
+            Menahem Begin 132, Tel Aviv
+        </span>
+    </address>
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+    <address>
+        <span class="branch-desc" id="colman">
+            <b>College of Management</b>
+            Eli Visel 2, Rison Letzion
+        </span>
+    </address>
+
+    <div id="myMap"></div>
+
+    <div class="d-flex flex-row ">
+        <address>
+            <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a> |
+            <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+        </address>
+
+    </div>
+    <aside id="aside">Not available on weekends</aside>
+</div>
+
 

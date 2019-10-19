@@ -42,7 +42,15 @@
         @RenderBody()
         <hr />
         <footer>
-            <p id="footer-text">If you want to hear more, just @Html.ActionLink("talk", "Contact", "Home", null, new { @style = "text-shadow:none;" }) with us</p>
+            <div class="d-flex flex-row justify-content-between align-items-center">
+                <p class="footer-text">If you want to hear more, just @Html.ActionLink("talk", "Contact", "Home", null, new { @style = "text-shadow:none;" }) with us</p>
+               
+                <p class="d-flex align-items-center footer-text">
+                    It's always the right time for a good meal!
+                    <canvas id="canvas" width="30" height="30">
+                    </canvas>
+                </p>
+            </div>
         </footer>
     </div>
 
