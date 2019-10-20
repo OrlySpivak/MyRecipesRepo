@@ -2,8 +2,8 @@
     function GetMap() {
         var map = new Microsoft.Maps.Map('#myMap');
 
-        var azrieliLoc = new Microsoft.Maps.Location(32.075069, 34.790840);
-        var comanLoc = new Microsoft.Maps.Location(31.968910, 34.770729);
+        var azrieliLoc = new Microsoft.Maps.Location(@ViewData["azrieliLat"], @ViewData["azrieliLong"]);
+        var comanLoc = new Microsoft.Maps.Location(@ViewData["colmanLat"], @ViewData["colmanLong"]);
 
 
         //Create custom Pushpin
