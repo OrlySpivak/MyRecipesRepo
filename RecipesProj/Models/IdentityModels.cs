@@ -30,10 +30,12 @@ namespace RecipesProj.Models
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<RecipesProj.Models.FoodType> FoodTypes { get; set; }
+        public DbSet<RecipesProj.Models.FoodType> FoodTypes { get; set; }
 
-        public System.Data.Entity.DbSet<RecipesProj.Models.Ingredient> Ingredients { get; set; }
+        public DbSet<RecipesProj.Models.Ingredient> Ingredients { get; set; }
 
-        public System.Data.Entity.DbSet<RecipesProj.Models.Recipe> Recipes { get; set; }
+        public DbSet<RecipesProj.Models.Recipe> Recipes { get; set; }
+
+        public DbSet<RecipesProj.Models.BranchLocation> BranchLocation { get; set; }
     }
 }
