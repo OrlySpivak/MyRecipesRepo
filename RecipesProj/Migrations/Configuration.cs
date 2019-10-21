@@ -1,10 +1,6 @@
 namespace RecipesProj.Migrations
 {
-    using Microsoft.AspNet.Identity;
-    using Microsoft.AspNet.Identity.EntityFramework;
-    using RecipesProj.Models;
     using System;
-    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
@@ -14,19 +10,22 @@ namespace RecipesProj.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
-            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(RecipesProj.Models.ApplicationDbContext context)
         {
-            var branchLocations = new List<BranchLocation>
-            {
-                new BranchLocation{BranchNum = 1, Name = "Azrieli", Lat = 32.075069, Long = 34.790840},
-                new BranchLocation{BranchNum = 2, Name = "College Of Management", Lat = 31.968910, Long = 34.770729},
-            };
+            //  This method will be called after migrating to the latest version.
 
-            branchLocations.ForEach(bl => context.BranchLocation.Add(bl));
-            context.SaveChanges();
+            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
+            //  to avoid creating duplicate seed data. E.g.
+            //
+            //    context.People.AddOrUpdate(
+            //      p => p.FullName,
+            //      new Person { FullName = "Andrew Peters" },
+            //      new Person { FullName = "Brice Lambson" },
+            //      new Person { FullName = "Rowan Miller" }
+            //    );
+            //
         }
     }
 }

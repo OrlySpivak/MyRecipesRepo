@@ -45,11 +45,11 @@ namespace RecipesProj.Migrations
                 c => new
                     {
                         ID = c.Int(nullable: false, identity: true),
-                        VideoURL = c.String(),
                         Name = c.String(),
                         Description = c.String(),
-                        InsertDate = c.DateTime(nullable: false),
                         FoodType_ID = c.Int(nullable: false),
+                        VideoURL = c.String(),
+                        InsertDate = c.DateTime(nullable: false),
                         FoodType_ID1 = c.Int(),
                     })
                 .PrimaryKey(t => t.ID)

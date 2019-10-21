@@ -11,11 +11,19 @@ namespace RecipesProj.Models
     {
         [Key]
         public int ID { get; set; }
-        public string VideoURL { get; set; }
+
         public string Name { get; set; }
+
         public string Description { get; set; }
-        public DateTime InsertDate { get; set; }
+
+        [Display(Name = "Food Type")]
         public int FoodType_ID { get; set; }
+
+        [Display(Name = "Video URL")]
+        public string VideoURL { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yy H:mm:ss}")]
+        public DateTime InsertDate { get; set; }
         public virtual FoodType FoodType { get; set; }
         public virtual ICollection<Ingredient> Ingredients { get; set; }
     }

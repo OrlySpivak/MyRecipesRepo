@@ -52,6 +52,7 @@ namespace RecipesProj.Controllers
         {
             if (ModelState.IsValid)
             {
+                recipe.InsertDate = DateTime.Now;
                 db.Recipes.Add(recipe);
                 db.SaveChanges();
                 return RedirectToAction("Index");
