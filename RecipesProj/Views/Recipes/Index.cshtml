@@ -1,10 +1,6 @@
 ﻿@model IEnumerable<RecipesProj.Models.Recipe>
 
-@{
-    ViewBag.Title = "Our Recipes";
-
-}
-<h2>Index</h2>
+    <h2>Our Recipes</h2>
 
 <p>
     @Html.ActionLink("Write your own recipe", "Create")
@@ -58,7 +54,9 @@
                             <a href="@Url.Action("Delete", new { id = item.ID })" class="btn btn-sm  btn-outline-secondary rec-action-btn">
                                 <i class="fa fa-trash"></i>
                             </a>
-                            <button onclick="facebook('@item.ID', '@item.VideoURL', '@item.Name', '@item.Description')">Share</button>
+                            <a class="btn btn-sm btn-outline-primary rec-action-btn share-fb-btn" onclick="facebook('@item.ID', '@item.VideoURL', '@item.Name', '@item.Description')">
+                                <i class="fa fa-facebook"></i>
+                            </a>
 
                         </div>
                     </div>
