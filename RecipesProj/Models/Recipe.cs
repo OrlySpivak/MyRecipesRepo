@@ -16,14 +16,15 @@ namespace RecipesProj.Models
 
         public string Description { get; set; }
 
-        [Display(Name = "Food Type")]
-        public int FoodType_ID { get; set; }
-
         [Display(Name = "Video URL")]
         public string VideoURL { get; set; }
 
         [DisplayFormat(DataFormatString = "{0:MM/dd/yy H:mm:ss}")]
         public DateTime InsertDate { get; set; }
+
+        [Display(Name = "Food Type")]
+        public int FoodTypeId { get; set; }
+
         public virtual FoodType FoodType { get; set; }
         public virtual ICollection<Ingredient> Ingredients { get; set; }
     }

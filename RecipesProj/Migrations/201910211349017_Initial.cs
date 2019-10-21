@@ -47,14 +47,13 @@ namespace RecipesProj.Migrations
                         ID = c.Int(nullable: false, identity: true),
                         Name = c.String(),
                         Description = c.String(),
-                        FoodType_ID = c.Int(nullable: false),
                         VideoURL = c.String(),
                         InsertDate = c.DateTime(nullable: false),
-                        FoodType_ID1 = c.Int(),
+                        FoodTypeId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.ID)
-                .ForeignKey("dbo.FoodTypes", t => t.FoodType_ID1)
-                .Index(t => t.FoodType_ID1);
+                .ForeignKey("dbo.FoodTypes", t => t.FoodTypeId, cascadeDelete: true)
+                .Index(t => t.FoodTypeId);
             
             CreateTable(
                 "dbo.AspNetRoles",
@@ -133,14 +132,14 @@ namespace RecipesProj.Migrations
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
             DropForeignKey("dbo.Ingredients", "Recipe_ID", "dbo.Recipes");
-            DropForeignKey("dbo.Recipes", "FoodType_ID1", "dbo.FoodTypes");
+            DropForeignKey("dbo.Recipes", "FoodTypeId", "dbo.FoodTypes");
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
-            DropIndex("dbo.Recipes", new[] { "FoodType_ID1" });
+            DropIndex("dbo.Recipes", new[] { "FoodTypeId" });
             DropIndex("dbo.Ingredients", new[] { "Recipe_ID" });
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");

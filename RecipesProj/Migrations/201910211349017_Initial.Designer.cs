@@ -13,7 +13,7 @@ namespace RecipesProj.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201910210212572_Initial"; }
+            get { return "201910211349017_Initial"; }
         }
         
         string IMigrationMetadata.Source
