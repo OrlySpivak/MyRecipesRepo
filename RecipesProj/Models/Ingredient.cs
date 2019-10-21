@@ -8,8 +8,15 @@ namespace RecipesProj.Models
 {
     public class Ingredient
     {
+        public Ingredient()
+        {
+            this.Recipes = new HashSet<Recipe>();
+        }
+
         [Key]
         public int ID { get; set; }
         public string Name { get; set; }
+
+        public virtual ICollection<Recipe> Recipes { get; set; }
     }
 }

@@ -9,6 +9,11 @@ namespace RecipesProj.Models
 {
     public class Recipe
     {
+        public Recipe()
+        {
+            this.Ingredients = new HashSet<Ingredient>();
+        }
+
         [Key]
         public int ID { get; set; }
 

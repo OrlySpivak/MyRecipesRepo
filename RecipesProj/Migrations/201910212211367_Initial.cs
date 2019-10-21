@@ -34,11 +34,8 @@ namespace RecipesProj.Migrations
                     {
                         ID = c.Int(nullable: false, identity: true),
                         Name = c.String(),
-                        Recipe_ID = c.Int(),
                     })
-                .PrimaryKey(t => t.ID)
-                .ForeignKey("dbo.Recipes", t => t.Recipe_ID)
-                .Index(t => t.Recipe_ID);
+                .PrimaryKey(t => t.ID);
             
             CreateTable(
                 "dbo.Recipes",
@@ -123,6 +120,19 @@ namespace RecipesProj.Migrations
                 .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
                 .Index(t => t.UserId);
             
+            CreateTable(
+                "dbo.RecipeIngredients",
+                c => new
+                    {
+                        Recipe_ID = c.Int(nullable: false),
+                        Ingredient_ID = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => new { t.Recipe_ID, t.Ingredient_ID })
+                .ForeignKey("dbo.Recipes", t => t.Recipe_ID, cascadeDelete: true)
+                .ForeignKey("dbo.Ingredients", t => t.Ingredient_ID, cascadeDelete: true)
+                .Index(t => t.Recipe_ID)
+                .Index(t => t.Ingredient_ID);
+            
         }
         
         public override void Down()
@@ -131,8 +141,11 @@ namespace RecipesProj.Migrations
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
-            DropForeignKey("dbo.Ingredients", "Recipe_ID", "dbo.Recipes");
+            DropForeignKey("dbo.RecipeIngredients", "Ingredient_ID", "dbo.Ingredients");
+            DropForeignKey("dbo.RecipeIngredients", "Recipe_ID", "dbo.Recipes");
             DropForeignKey("dbo.Recipes", "FoodTypeId", "dbo.FoodTypes");
+            DropIndex("dbo.RecipeIngredients", new[] { "Ingredient_ID" });
+            DropIndex("dbo.RecipeIngredients", new[] { "Recipe_ID" });
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
@@ -140,7 +153,7 @@ namespace RecipesProj.Migrations
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
             DropIndex("dbo.Recipes", new[] { "FoodTypeId" });
-            DropIndex("dbo.Ingredients", new[] { "Recipe_ID" });
+            DropTable("dbo.RecipeIngredients");
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
