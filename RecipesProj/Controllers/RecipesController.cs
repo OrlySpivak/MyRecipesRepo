@@ -61,8 +61,9 @@ namespace RecipesProj.Controllers
             ViewBag.FoodTypeID = new SelectList(db.FoodTypes, "ID", "Type", recipe.FoodTypeId);
             return View(recipe);
         }
-
+        [Authorize(Roles = "Admin")]
         // GET: Recipes/Edit/5
+
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -96,6 +97,7 @@ namespace RecipesProj.Controllers
             return View(recipe);
         }
 
+        [Authorize(Roles = "Admin")]
         // GET: Recipes/Delete/5
         public ActionResult Delete(int? id)
         {
