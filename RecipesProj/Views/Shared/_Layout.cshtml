@@ -9,6 +9,9 @@
 
 </head>
 <body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v4.0&appId=147688298536"></script>
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="/">My Recipes</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,7 +47,7 @@
         <footer>
             <div class="d-flex flex-row justify-content-between align-items-center">
                 <p class="footer-text">If you want to hear more, just @Html.ActionLink("talk", "Contact", "Home", null, new { @style = "text-shadow:none;" }) with us</p>
-               
+
                 <p class="d-flex align-items-center footer-text">
                     It's always the right time for a good meal!
                     <canvas id="canvas" width="30" height="30">

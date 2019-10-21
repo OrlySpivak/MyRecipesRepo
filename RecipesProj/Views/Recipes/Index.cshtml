@@ -1,10 +1,6 @@
 ﻿@model IEnumerable<RecipesProj.Models.Recipe>
 
-@{
-    ViewBag.Title = "Index";
-}
-
-<h2>Index</h2>
+    <h2>Our Recipes</h2>
 
 <p>
     @Html.ActionLink("Write your own recipe", "Create")
@@ -13,6 +9,23 @@
 <div class="d-flex justify-content-between flex-wrap">
     @foreach (var item in Model)
     {
+    <script>
+            function facebook(link1, video1, name1, description1) {
+                FB.ui({
+                    method: 'share',
+                    href: video1,
+                    link: 'http://localhost:3112/Recipes/Details/1',
+                    quote: 'Hi there! this is a great recipe from MyRcepies site - http://localhost:3112/Recipes/Details/' + link1,
+                    video: video1,
+                    name: name1,
+                    description: description1
+                }, function (response) {
+                    console.log(response);
+                }
+                );
+            };
+    </script>
+
         var URLId = item.VideoURL.Substring(item.VideoURL.IndexOf("?v=") + 3);
         string embedlink = "https://www.youtube.com/embed/" + URLId;
 
@@ -41,9 +54,10 @@
                             <a href="@Url.Action("Delete", new { id = item.ID })" class="btn btn-sm  btn-outline-secondary rec-action-btn">
                                 <i class="fa fa-trash"></i>
                             </a>
-                            <a class="btn fb-share btn-sm btn-outline-secondary rec-action-btn">
-                                <i class="fa fa-share-alt fb-share"></i>
+                            <a class="btn btn-sm btn-outline-primary rec-action-btn share-fb-btn" onclick="facebook('@item.ID', '@item.VideoURL', '@item.Name', '@item.Description')">
+                                <i class="fa fa-facebook"></i>
                             </a>
+
                         </div>
                     </div>
                 </div>

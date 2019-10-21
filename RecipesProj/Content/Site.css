@@ -33,6 +33,10 @@ textarea {
     color: gray;
 }
 
+.share-fb-btn {
+    cursor: pointer;
+}
+
 #myMap {
     position: relative;
     width: 600px;
