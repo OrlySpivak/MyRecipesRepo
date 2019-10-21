@@ -29,7 +29,16 @@
                 <li class="nav-item">
                     @Html.ActionLink("Stats", "Graph", "Stats", null, new { @class = "nav-link" })
                 </li>
+                <li class="nav-item">
+                    @Html.ActionLink("Submit Recipe", "Index", "Recommendation", null, new { @class = "nav-link" })
+                </li>
             </ul>
+            <span>
+
+            </span>
+            <span class="navbar-text">
+                @Html.Partial("_SearchPartial")
+            </span>
             <span class="navbar-text">
                 @Html.Partial("_LoginPartial")
             </span>
