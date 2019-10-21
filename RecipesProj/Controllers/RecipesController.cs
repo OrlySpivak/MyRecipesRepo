@@ -48,7 +48,7 @@ namespace RecipesProj.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,VideoURL,Name,Description,InsertDate,FoodTypeID")] Recipe recipe)
+        public ActionResult Create([Bind(Include = "ID,VideoURL,Name,Description,InsertDate,FoodTypeId")] Recipe recipe)
         {
             if (ModelState.IsValid)
             {
@@ -58,7 +58,7 @@ namespace RecipesProj.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.FoodTypeID = new SelectList(db.FoodTypes, "ID", "Type", recipe.FoodType_ID);
+            ViewBag.FoodTypeID = new SelectList(db.FoodTypes, "ID", "Type", recipe.FoodTypeId);
             return View(recipe);
         }
 
@@ -74,7 +74,7 @@ namespace RecipesProj.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.FoodTypeID = new SelectList(db.FoodTypes, "ID", "Type", recipe.FoodType_ID);
+            ViewBag.FoodTypeID = new SelectList(db.FoodTypes, "ID", "Type", recipe.FoodTypeId);
             return View(recipe);
         }
 
@@ -83,15 +83,16 @@ namespace RecipesProj.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,VideoURL,Name,Description,InsertDate,FoodTypeID")] Recipe recipe)
+        public ActionResult Edit([Bind(Include = "ID,VideoURL,Name,Description,InsertDate,FoodTypeId")] Recipe recipe)
         {
             if (ModelState.IsValid)
             {
+                recipe.InsertDate = DateTime.Now;
                 db.Entry(recipe).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.FoodTypeID = new SelectList(db.FoodTypes, "ID", "Type", recipe.FoodType_ID);
+            ViewBag.FoodTypeID = new SelectList(db.FoodTypes, "ID", "Type", recipe.FoodTypeId);
             return View(recipe);
         }
 
