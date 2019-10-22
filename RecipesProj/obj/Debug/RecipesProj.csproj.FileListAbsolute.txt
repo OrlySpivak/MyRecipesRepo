@@ -245,9 +245,9 @@ C:\Users\Orly\Source\Repos\MyRecipesRepo\RecipesProj\bin\Microsoft.Owin.Security
 C:\Users\Orly\Source\Repos\MyRecipesRepo\RecipesProj\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\Orly\Source\Repos\MyRecipesRepo\RecipesProj\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Orly\Source\Repos\MyRecipesRepo\RecipesProj\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\Orly\Source\Repos\MyRecipesRepo\RecipesProj\obj\Debug\RecipesProj.csprojAssemblyReference.cache
+C:\Users\Orly\Source\Repos\MyRecipesRepo\RecipesProj\obj\Debug\RecipesProj.Migrations.Initial.resources
+C:\Users\Orly\Source\Repos\MyRecipesRepo\RecipesProj\obj\Debug\RecipesProj.csproj.GenerateResource.cache
 C:\Users\Orly\Source\Repos\MyRecipesRepo\RecipesProj\obj\Debug\RecipesProj.csproj.CopyComplete
 C:\Users\Orly\Source\Repos\MyRecipesRepo\RecipesProj\obj\Debug\RecipesProj.dll
 C:\Users\Orly\Source\Repos\MyRecipesRepo\RecipesProj\obj\Debug\RecipesProj.pdb
-C:\Users\Orly\Source\Repos\MyRecipesRepo\RecipesProj\obj\Debug\RecipesProj.Migrations.Initial.resources
-C:\Users\Orly\Source\Repos\MyRecipesRepo\RecipesProj\obj\Debug\RecipesProj.csproj.GenerateResource.cache
+C:\Users\Orly\Source\Repos\MyRecipesRepo\RecipesProj\obj\Debug\RecipesProj.csprojAssemblyReference.cache

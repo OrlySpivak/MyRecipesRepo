@@ -34,6 +34,22 @@
                 zoom: 15
             });
         })
+
+        $.ajax({
+            type: "GET",
+            url: 'http://api.openweathermap.org/data/2.5/weather?lat=' + @ViewData["azrieliLat"] + '&lon=' + @ViewData["azrieliLong"] + '&units=metric&appid=b5543e7ce381d451ca1e82689d057469',
+            success: function (data) {
+                $('#azrieliTemp').html("It's " + data.main.temp + "°C on Azrieli. You should eat someting " + (data.main.temp > 20 ? "cold" : "hot"));
+            }
+        })
+
+        $.ajax({
+            type: "GET",
+            url: 'http://api.openweathermap.org/data/2.5/weather?lat=' + @ViewData["colmanLat"] + '&lon=' + @ViewData["colmanLong"] + '&units=metric&appid=b5543e7ce381d451ca1e82689d057469',
+            success: function (data) {
+                $('#colmanTemp').html("It's " + data.main.temp + "°C on College of Management. You should eat someting " + (data.main.temp > 20 ? "cold" : "hot"));
+            }
+        })
     }
 </script>
 
@@ -65,6 +81,15 @@
 
     </div>
     <aside id="aside">Not available on weekends</aside>
+
+    <div class="card" id="weather-tip">
+        <div class="card-body d-flex flex-column align-items-center">
+            <i class="fa fa-bell"></i>
+            <b>Our Tip</b>
+            <div id="azrieliTemp"></div>
+            <div id="colmanTemp"></div>
+        </div>
+    </div>
 </div>
 
 

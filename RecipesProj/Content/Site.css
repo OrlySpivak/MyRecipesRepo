@@ -37,6 +37,11 @@ textarea {
     cursor: pointer;
 }
 
+#weather-tip {
+    margin-bottom: 5px;
+    color: gray
+}
+
 #myMap {
     position: relative;
     width: 600px;
