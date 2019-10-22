@@ -1,6 +1,5 @@
 namespace RecipesProj.Migrations
 {
-    using RecipesProj.Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -10,16 +9,23 @@ namespace RecipesProj.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(RecipesProj.Models.ApplicationDbContext context)
         {
-            context.BranchLocation.AddOrUpdate(
-                  p => p.BranchNum,
-                  new BranchLocation { Name = "Azrieli", BranchNum = 1, Lat = 32.075069, Long = 34.79084 },
-                  new BranchLocation { Name = "College Of Management", BranchNum = 2, Lat = 31.96891, Long = 34.770729 }
-                );
+            //  This method will be called after migrating to the latest version.
+
+            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
+            //  to avoid creating duplicate seed data. E.g.
+            //
+            //    context.People.AddOrUpdate(
+            //      p => p.FullName,
+            //      new Person { FullName = "Andrew Peters" },
+            //      new Person { FullName = "Brice Lambson" },
+            //      new Person { FullName = "Rowan Miller" }
+            //    );
+            //
         }
     }
 }
