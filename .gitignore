@@ -333,5 +333,6 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
-RecipesProj/bin/
-RecipesProj/obj/
+RecipesProj/bin/*
+RecipesProj/obj/*
+packages/
