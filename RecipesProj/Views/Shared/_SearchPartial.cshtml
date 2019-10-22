@@ -1,0 +1,12 @@
+﻿<ul class="nav navbar-nav navbar-right">
+    <li>
+
+        @using (Html.BeginForm("Results", "Search", FormMethod.Get, new { enctype = "multipart/form-data" }))
+        {
+            //various fields for the EF model, plus
+            <input type="text" name="id" class="form-actions" />
+            <input type="submit" value="Search" class="btn btn-default" />
+        }
+
+    </li>
+</ul>
