@@ -17,7 +17,7 @@ namespace RecipesProj.Models
         public ActionResult Index()
         {
             var recipes = db.Recipes.ToList();
-            return View(recipes);
+            return RedirectToAction("../Recipes/Index", recipes);
         }
 
         // GET: Search with params
@@ -33,7 +33,7 @@ namespace RecipesProj.Models
                 // By ingrediant name
                 recipes.AddRange(allRecipes.Where(recipe => recipe.Ingredients.Select(ing => ing.Name.ToLowerInvariant()).Contains(id)));
             }
-            return View(recipes);
+            return RedirectToAction("../Recipes/Index", recipes);
         }
 
     }
