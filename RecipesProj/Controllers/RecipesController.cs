@@ -15,9 +15,27 @@ namespace RecipesProj.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Recipes
-        public ActionResult Index()
+        public ActionResult Index(string nameString, string typeString, string descriptionString)
         {
             var recipes = db.Recipes.Include(r => r.FoodType);
+
+            if (!String.IsNullOrEmpty(nameString))
+            {
+                recipes = recipes.Where(s => s.Name.Contains(nameString));
+
+            }
+
+            if (!String.IsNullOrEmpty(typeString))
+            {
+                recipes = recipes.Where(s => s.FoodType.Type.Contains(typeString));
+
+            }
+
+            if (!String.IsNullOrEmpty(descriptionString))
+            {
+                recipes = recipes.Where(s => s.Description.Contains(descriptionString));
+
+            }
             return View(recipes.ToList());
         }
 

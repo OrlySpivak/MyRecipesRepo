@@ -5,7 +5,17 @@
 <p>
     @Html.ActionLink("Write your own recipe", "Create")
 </p>
-
+<div>
+    @using (Html.BeginForm())
+    {
+    <p>
+        Name: @Html.TextBox("nameString")
+        Type: @Html.TextBox("typeString")
+        Description: @Html.TextBox("descriptionString")
+        <input type="submit" value="Search" />
+    </p>
+    }
+</div>
 <div class="d-flex justify-content-between flex-wrap">
     @foreach (var item in Model)
     {
